@@ -1,30 +1,52 @@
 package Biblioteca.src;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Membro {
     private int id;
-    private String nome = "";
-    private int livrosEmprestados;
+    private String nome;
+    private List<String> livrosEmprestados;
 
-    public void setId(int id) {
+    public Membro(int id, String nome) {
         this.id = id;
-    }
-    public void setLivrosEmprestados(int livrosEmprestados) {
-        this.livrosEmprestados = livrosEmprestados;
-    }
-    public void setNome(String nome) {
         this.nome = nome;
+        this.livrosEmprestados = new ArrayList<>();
     }
+
     public int getId() {
         return id;
     }
-    public int getLivrosEmprestados() {
-        return livrosEmprestados;
-    }
+
     public String getNome() {
         return nome;
     }
-    public static Membro novoMembro (int id, String nome, int livrosEmprestados){
-        Membro membro = new Membro();
-        return membro;
+
+    public void CriarMembro(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
+    public void MembroPegaEmprestado(String livro) {
+        livrosEmprestados.add(livro);
+    }
+//Se o livro estiver dentro da lista "livrosEmprestados" remova o da lista e o retorne como livro delvolvido, se não o livro não foi emprestado
+    public void MembroRetornaLivro(String livro) {
+        if (livrosEmprestados.contains(livro)) {
+            livrosEmprestados.remove(livro);
+            System.out.println(livro + "foi delvido pelo membro:" + nome);
+        } else {
+            System.out.println(nome + " não possui este livro emprestado: " + livro);
+        }
+    }
+//listar todos os livros que um membro pode ter emprestado
+    public void listarLivrosEmprestados() {
+        System.out.println(nome + " possui os seguintes livros emprestados:");
+        for (String livro : livrosEmprestados) {
+            System.out.println(livro);
+        }
     }
 }
+
+
+
