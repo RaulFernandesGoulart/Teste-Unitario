@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Membro {
-    private int id;
-    private String nome;
-    private List<String> livrosEmprestados;
+	 private int id;
+	    private String nome;
+	    private List<String> livrosEmprestados;
 
-    public Membro(int id, String nome) {
-        this.id = id;
-        this.nome = nome;
-        this.livrosEmprestados = new ArrayList<>();
-    }
+	    public Membro(int id, String nome) {
+	        this.id = id;
+	        this.nome = nome;
+	        this.livrosEmprestados = new ArrayList<>();
+	    }
 
     public int getId() {
         return id;
@@ -40,12 +40,15 @@ public class Membro {
         }
     }
 //listar todos os livros que um membro pode ter emprestado
-    public void listarLivrosEmprestados() {
-        System.out.println(nome + " possui os seguintes livros emprestados:");
-        for (String livro : livrosEmprestados) {
-            System.out.println(livro);
-        }
+    public List<String> listarLivrosEmprestados() {
+        return livrosEmprestados; 
+    }  
+
+	public List<String> getLivrosEmprestados() {
+        return livrosEmprestados;
     }
+	
+
 }
 
 
