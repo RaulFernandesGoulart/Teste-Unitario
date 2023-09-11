@@ -15,10 +15,10 @@ public class LivroTest {
     @Test
     public void testCriarLivro() {
         livro.setId(111);
-        livro.setAutor("Rick Riordan");
-        livro.setTitulo("Percy Jackson E O Ladrao De Raios");
-        livro.setEmprestado(false);
-        list.add(livro);
+        livro.setAutor ("Rick Riordan");
+        livro.setTitulo ("Percy Jackson E O Ladrao De Raios");
+        livro.setEmprestado (false);
+        list.add (livro);
 
     }
     
@@ -29,14 +29,16 @@ public class LivroTest {
         livro.setTitulo("Percy Jackson E O Ladrao De Raios");
         livro.setEmprestado(false);
         list.add(livro);
+
     }
 
     @Test
     public void testRetornarLivro() {
         livro.setId(111);
-        livro.setAutor("Rick Riordan");
-        livro.setTitulo("Percy Jackson E O Ladrao De Raios");
-        livro.setEmprestado(true);        
+        livro.setAutor ("Rick Riordan");
+        livro.setTitulo ("Percy Jackson E O Ladrao De Raios");
+        livro.setEmprestado(true);
         list.add(livro);
+
     }
 }
